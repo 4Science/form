@@ -1,7 +1,7 @@
 import {
   Action,
   Store,
-} from 'redux';
+} from '@ngrx/store';
 
 import {
   AbstractStore,
