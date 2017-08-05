@@ -1,6 +1,7 @@
 import {Iterable} from 'immutable';
 
-import {Action} from 'redux';
+//import {Action} from 'redux';
+import { Action } from '@ngrx/store';
 
 import {FORM_CHANGED} from './form-store';
 

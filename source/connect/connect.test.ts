@@ -18,13 +18,13 @@ import {
   FormGroup,
 } from '@angular/forms';
 
-import {
+/*import {
   Store,
   applyMiddleware,
   compose,
-  combineReducers,
   createStore,
-} from 'redux';
+} from 'redux';*/
+import { combineReducers, Store } from '@ngrx/store';
 
 import {composeReducers} from './compose-reducers';
 import {defaultFormReducer} from './form-reducer';
@@ -126,9 +126,10 @@ describe('connect directive', () => {
   let store: Store<AppState>;
 
   beforeEach(done => {
-    const create = compose(applyMiddleware(logger))(createStore);
+    //const create = compose(applyMiddleware(logger))(createStore);
 
-    store = create(reducers, <AppState> {});
+    //store = create(reducers, <AppState> {});
+    store = new Store<AppState>(undefined, undefined, reducers);
 
     TestBed.configureCompiler({
       providers: [

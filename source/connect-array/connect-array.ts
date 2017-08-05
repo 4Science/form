@@ -34,7 +34,8 @@ import {
   NG_ASYNC_VALIDATORS,
   NG_VALIDATORS
 } from '@angular/forms';
-import {Unsubscribe} from 'redux';
+//import {Unsubscribe} from 'redux';
+import { Subscription } from 'rxjs';
 
 import {ConnectBase} from '../connect';
 import {FormStore} from '../form-store';
@@ -57,7 +58,7 @@ export class ConnectArrayTemplate {
   }]
 })
 export class ConnectArray extends ControlContainer implements OnInit {
-  private stateSubscription: Unsubscribe;
+  private stateSubscription: Subscription;
 
   private array = new FormArray([]);
 

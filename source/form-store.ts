@@ -2,9 +2,12 @@ import {Injectable} from '@angular/core';
 
 import {NgForm} from '@angular/forms';
 
-import {NgRedux} from '@angular-redux/store';
+//import {NgRedux} from '@angular-redux/store';
+import { Store } from '@ngrx/store';
 
-import {Action, Unsubscribe} from 'redux';
+//import {Action, Unsubscribe} from 'redux';
+import { Action } from '@ngrx/store';
+import { Subscription } from 'rxjs';
 
 export interface AbstractStore<RootState> {
   /// Dispatch an action
@@ -14,7 +17,7 @@ export interface AbstractStore<RootState> {
   getState(): RootState;
 
   /// Subscribe to changes in the store
-  subscribe(fn: (state: RootState) => void): Unsubscribe;
+  subscribe(fn: (state: RootState) => void): Subscription;
 }
 
 export const FORM_CHANGED = '@@angular-redux/form/FORM_CHANGED';
@@ -28,13 +31,15 @@ export class FormStore {
   /// calling the constructor of this class manually (from configure.ts),
   /// where a plain store can be cast to an NgRedux. (For our purposes, they
   /// have almost identical shapes.)
-  constructor(private store: NgRedux<any>) {}
+  constructor(private store: Store<any>) {}
 
   getState() {
-    return this.store.getState();
+      let state: any;
+      this.store.take(1).subscribe(s => state = s);
+      return state;
   }
 
-  subscribe(fn: (state: any) => void): Unsubscribe {
+  subscribe(fn: (state: any) => void): Subscription {
     return this.store.subscribe(() => fn(this.getState()));
   }
 

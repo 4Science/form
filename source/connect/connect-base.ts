@@ -10,7 +10,7 @@ import {
 
 import { Subscription } from 'rxjs';
 
-import { Unsubscribe } from 'redux';
+//import { Unsubscribe } from 'redux';
 
 import 'rxjs/add/operator/debounceTime';
 
@@ -25,7 +25,7 @@ export interface ControlPair {
 export class ConnectBase {
 
   @Input('connect') connect: () => (string | number) | Array<string | number>;
-  private stateSubscription: Unsubscribe;
+  private stateSubscription: Subscription;
 
   private formSubscription: Subscription;
   protected store: FormStore;
@@ -56,9 +56,12 @@ export class ConnectBase {
       this.formSubscription.unsubscribe();
     }
 
-    if (typeof this.stateSubscription === 'function') {
+    if (this.stateSubscription) {
+          this.stateSubscription.unsubscribe();
+      }
+    /*if (typeof this.stateSubscription === 'function') {
       this.stateSubscription(); // unsubscribe
-    }
+    }*/
   }
 
   ngAfterContentInit() {

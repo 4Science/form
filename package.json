@@ -1,12 +1,11 @@
 {
-  "name": "@angular-redux/form",
+  "name": "@4science/form",
   "version": "6.6.0",
   "description": "Build Angular 2+ forms with Redux",
   "dependencies": {
     "immutable": "^3.8.1"
   },
   "devDependencies": {
-    "@angular-redux/store": "^6.3.0",
     "@angular/common": "^4.0.0",
     "@angular/compiler": "^4.0.0",
     "@angular/compiler-cli": "^4.0.0",
@@ -15,6 +14,10 @@
     "@angular/platform-browser": "^4.0.0",
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/tsc-wrapped": "^4.0.0",
+    "@ngrx/core": "1.2.0",
+    "@ngrx/effects": "2.0.4",
+    "@ngrx/router-store": "1.2.6",
+    "@ngrx/store": "2.2.3",
     "@ngtools/webpack": "^1.2.1",
     "@types/chai": "^3.4.34",
     "@types/jasmine": "^2.5.35",
@@ -47,12 +50,10 @@
     "zone.js": "^0.8.4"
   },
   "peerDependencies": {
-    "@angular-redux/store": "^6.3.0",
     "@angular/common": "^2.4.0 || ^4.0.0",
     "@angular/compiler": "^2.4.0 || ^4.0.0",
     "@angular/core": "^2.4.0 || ^4.0.0",
-    "@angular/forms": "^2.4.0 || ^4.0.0",
-    "redux": "^3.0"
+    "@angular/forms": "^2.4.0 || ^4.0.0"
   },
   "engines": {
     "node": ">=6.0"
@@ -70,6 +71,6 @@
   },
   "main": "dist/source/index.js",
   "typings": "dist/source/index.d.ts",
-  "repository": "https://github.com/angular-redux/form",
+  "repository": "https://github.com/4Science/form",
   "license": "MIT"
 }

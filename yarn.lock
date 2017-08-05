@@ -2,10 +2,6 @@
 # yarn lockfile v1
 
 
-"@angular-redux/store@^6.3.0":
-  version "6.5.4"
-  resolved "https://registry.yarnpkg.com/@angular-redux/store/-/store-6.5.4.tgz#23bd4a3171e9afa4ea237c6d7214fd5e94272ba4"
-
 "@angular/common@^4.0.0":
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/@angular/common/-/common-4.0.3.tgz#17472895eb425f2812b3a79162b5b494d2506a5b"
@@ -43,6 +39,22 @@
   resolved "https://registry.yarnpkg.com/@angular/tsc-wrapped/-/tsc-wrapped-4.0.3.tgz#a5fea6a87df9c348faa5577c3698c8a363082781"
   dependencies:
     tsickle "^0.21.0"
+
+"@ngrx/core@1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/core/-/core-1.2.0.tgz#882b46abafa2e0e6d887cb71a1b2c2fa3e6d0dc6"
+
+"@ngrx/effects@2.0.4":
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/@ngrx/effects/-/effects-2.0.4.tgz#418eee5e1032fa66de5bbf1855653bb1951f12a4"
+
+"@ngrx/router-store@1.2.6":
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/@ngrx/router-store/-/router-store-1.2.6.tgz#a2eb0ca515e9b367781f1030250dd64bb73c086b"
+
+"@ngrx/store@2.2.3":
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/@ngrx/store/-/store-2.2.3.tgz#e7bd1149f1c44208f1cc4744353f0f98a0f1f57b"
 
 "@ngtools/webpack@^1.2.1":
   version "1.2.4"
@@ -3418,9 +3430,9 @@ type-is@~1.6.14:
     media-typer "0.3.0"
     mime-types "~2.1.13"
 
-typescript@latest:
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.4.1.tgz#c3ccb16ddaa0b2314de031e7e6fee89e5ba346bc"
+typescript@^2.4.1:
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.4.2.tgz#f8395f85d459276067c988aa41837a8f82870844"
 
 uglify-js@^2.6, uglify-js@^2.7.5:
   version "2.7.5"
