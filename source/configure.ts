@@ -22,7 +22,11 @@ export const provideReduxForms = <T>(store: Store<T> | any) => {
 const wrap = <T>(store: Store<T> | any): AbstractStore<T> => {
   const dispatch = (action: Action) => store.dispatch(action);
 
-  const getState = () => <T> store.getState();
+  const getState = () => {
+      let state: any;
+      store.take(1).subscribe((s: any) => state = s);
+      return state;
+  };
 
   const subscribe =
     (fn: (state: T) => void) => store.subscribe(() => fn(store.getState()));
